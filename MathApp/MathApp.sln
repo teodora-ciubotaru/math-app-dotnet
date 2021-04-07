@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathApp.Android", "MathApp\MathApp.Android\MathApp.Android.csproj", "{FD775B95-E1B0-4609-995A-184DDFD397A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathApp", "MathApp\MathApp\MathApp.csproj", "{295CE96A-D39B-48D4-A9A7-D16554B3299E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD775B95-E1B0-4609-995A-184DDFD397A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD775B95-E1B0-4609-995A-184DDFD397A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD775B95-E1B0-4609-995A-184DDFD397A5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FD775B95-E1B0-4609-995A-184DDFD397A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD775B95-E1B0-4609-995A-184DDFD397A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD775B95-E1B0-4609-995A-184DDFD397A5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{295CE96A-D39B-48D4-A9A7-D16554B3299E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295CE96A-D39B-48D4-A9A7-D16554B3299E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295CE96A-D39B-48D4-A9A7-D16554B3299E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{295CE96A-D39B-48D4-A9A7-D16554B3299E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295CE96A-D39B-48D4-A9A7-D16554B3299E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{295CE96A-D39B-48D4-A9A7-D16554B3299E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {752D4C66-AC0A-4489-B8BA-FC74E5AA9BCA}
+	EndGlobalSection
+EndGlobal
