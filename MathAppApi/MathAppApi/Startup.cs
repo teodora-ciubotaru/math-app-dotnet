@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MathAppApi.Data;
+using MathAppApi.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace MathAppApi.Models
@@ -27,8 +28,13 @@ namespace MathAppApi.Models
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // register services
+            services.AddScoped<UserService>();
+
+            // register controllers
             services.AddControllers();
 
+            // register data
             services.AddDbContext<MathAppDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("PostgreSql")));
         }
