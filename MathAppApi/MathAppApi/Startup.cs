@@ -35,8 +35,11 @@ namespace MathAppApi
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
+            else
+            {
+                // For mobile apps, allow http traffic.
+                app.UseHttpsRedirection();
+            }
 
             app.UseRouting();
 
