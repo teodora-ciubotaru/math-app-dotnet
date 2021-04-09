@@ -10,8 +10,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MathAppApi.Data;
+using Microsoft.EntityFrameworkCore;
 
-namespace MathAppApi
+namespace MathAppApi.Models
 {
     public class Startup
     {
@@ -26,6 +28,9 @@ namespace MathAppApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddDbContext<MathAppDbContext>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("PostgreSql")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
