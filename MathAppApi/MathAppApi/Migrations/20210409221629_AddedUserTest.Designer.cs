@@ -3,15 +3,17 @@ using System;
 using MathAppApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace MathAppApi.Migrations
 {
     [DbContext(typeof(MathAppDbContext))]
-    partial class MathAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210409221629_AddedUserTest")]
+    partial class AddedUserTest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -98,45 +100,6 @@ namespace MathAppApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tests");
-                });
-
-            modelBuilder.Entity("MathAppApi.Models.TestSection", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<int>("Answer")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid>("PhotoId")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Question")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Solution1")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Solution2")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Solution3")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Solution4")
-                        .HasColumnType("text");
-
-                    b.Property<Guid>("TestId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PhotoId");
-
-                    b.HasIndex("TestId");
-
-                    b.ToTable("TestSections");
                 });
 
             modelBuilder.Entity("MathAppApi.Models.User", b =>
@@ -247,25 +210,6 @@ namespace MathAppApi.Migrations
                     b.Navigation("Lesson");
 
                     b.Navigation("Photo");
-                });
-
-            modelBuilder.Entity("MathAppApi.Models.TestSection", b =>
-                {
-                    b.HasOne("MathAppApi.Models.Photo", "Photo")
-                        .WithMany()
-                        .HasForeignKey("PhotoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MathAppApi.Models.Test", "Test")
-                        .WithMany()
-                        .HasForeignKey("TestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Photo");
-
-                    b.Navigation("Test");
                 });
 
             modelBuilder.Entity("MathAppApi.Models.UserLesson", b =>

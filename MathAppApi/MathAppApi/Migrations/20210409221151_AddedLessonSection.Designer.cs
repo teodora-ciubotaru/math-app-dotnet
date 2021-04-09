@@ -3,15 +3,17 @@ using System;
 using MathAppApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace MathAppApi.Migrations
 {
     [DbContext(typeof(MathAppDbContext))]
-    partial class MathAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210409221151_AddedLessonSection")]
+    partial class AddedLessonSection
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -83,62 +85,6 @@ namespace MathAppApi.Migrations
                     b.ToTable("Photos");
                 });
 
-            modelBuilder.Entity("MathAppApi.Models.Test", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Grade")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tests");
-                });
-
-            modelBuilder.Entity("MathAppApi.Models.TestSection", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<int>("Answer")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid>("PhotoId")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Question")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Solution1")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Solution2")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Solution3")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Solution4")
-                        .HasColumnType("text");
-
-                    b.Property<Guid>("TestId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PhotoId");
-
-                    b.HasIndex("TestId");
-
-                    b.ToTable("TestSections");
-                });
-
             modelBuilder.Entity("MathAppApi.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -183,33 +129,6 @@ namespace MathAppApi.Migrations
                     b.ToTable("UserLessons");
                 });
 
-            modelBuilder.Entity("MathAppApi.Models.UserTest", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("FinishedOn")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<float>("Result")
-                        .HasColumnType("real");
-
-                    b.Property<Guid>("TestId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TestId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserTests");
-                });
-
             modelBuilder.Entity("MathAppApi.Models.WeatherForecast", b =>
                 {
                     b.Property<Guid>("Id")
@@ -249,25 +168,6 @@ namespace MathAppApi.Migrations
                     b.Navigation("Photo");
                 });
 
-            modelBuilder.Entity("MathAppApi.Models.TestSection", b =>
-                {
-                    b.HasOne("MathAppApi.Models.Photo", "Photo")
-                        .WithMany()
-                        .HasForeignKey("PhotoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MathAppApi.Models.Test", "Test")
-                        .WithMany()
-                        .HasForeignKey("TestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Photo");
-
-                    b.Navigation("Test");
-                });
-
             modelBuilder.Entity("MathAppApi.Models.UserLesson", b =>
                 {
                     b.HasOne("MathAppApi.Models.Lesson", "Lesson")
@@ -283,25 +183,6 @@ namespace MathAppApi.Migrations
                         .IsRequired();
 
                     b.Navigation("Lesson");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("MathAppApi.Models.UserTest", b =>
-                {
-                    b.HasOne("MathAppApi.Models.Test", "Test")
-                        .WithMany()
-                        .HasForeignKey("TestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MathAppApi.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Test");
 
                     b.Navigation("User");
                 });

@@ -10,9 +10,15 @@ namespace MathAppApi.Data
 {
     public class MathAppDbContext : DbContext
     {
-        //public DbSet<Blog> Blogs { get; set; }
-        //public DbSet<Post> Posts { get; set; }
         public DbSet<WeatherForecast> WeatherForecasts { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Photo> Photos { get; set; }
+        public DbSet<Lesson> Lessons { get; set; }
+        public DbSet<UserLesson> UserLessons { get; set; }
+        public DbSet<LessonSection> LessonSections { get; set; }
+        public DbSet<Test> Tests { get; set; }
+        public DbSet<UserTest> UserTests { get; set; }
+        public DbSet<TestSection> TestSections { get; set; }
 
         public MathAppDbContext(DbContextOptions<MathAppDbContext> options) : base(options)
         {
