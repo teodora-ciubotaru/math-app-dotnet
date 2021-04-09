@@ -8,6 +8,12 @@ namespace MathApp
 {
     public partial class App : Application
     {
+        public static readonly IRestService RestServiceInstance;
+
+        static App()
+        {
+            RestServiceInstance = new RestService();
+        }
 
         public App()
         {
