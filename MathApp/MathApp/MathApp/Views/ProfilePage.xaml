@@ -1,12 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MathApp.Views.ProfilePage">
+             x:Class="MathApp.Views.ProfilePage"
+             BackgroundColor="{StaticResource Dark-green}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Profile Page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <ScrollView Grid.Row="1">
+                <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                    <Label Text="Profile Page" HorizontalOptions="Center" FontSize="30"/>
+                    <Label Text="Numarul de puncte obtinute: x" FontSize="16" Padding="0,0,0,0"></Label>
+                    <Label Text="Numarul de lectii parcuse: y" FontSize="16" Padding="0,0,0,0"></Label>
+                    <Label Text="Numarul de teste: z" FontSize="16" Padding="0,0,0,0"></Label>
+               
+                </StackLayout>
+            </ScrollView>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -1,12 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MathApp.Views.LearnPage">
+             x:Class="MathApp.Views.LearnPage"
+             BackgroundColor="{StaticResource Dark-green}">
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Learn Page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+        <StackLayout Margin="25">
+
+            <Label Text="Learn Page" HorizontalOptions="Center" FontSize="30"></Label>
+
+            <Frame BorderColor="Black"
+               Padding="10">
+
+                <StackLayout Orientation="Horizontal" Spacing="15">
+
+                    <StackLayout Orientation="Horizontal"
+                         Spacing="15">
+                        <Image Source="learn.png"></Image>
+                        <Label Text="Lectia 1"
+                       FontSize="Large"
+                       VerticalOptions="Center" />
+                    </StackLayout>
+
+                    <Label Text="Formule de calcul prescurtat" VerticalOptions="Center"></Label>
+
+                </StackLayout>
+
+                
+
+
+
+
+            </Frame>
+
+            <Frame BorderColor="Black"
+               Padding="5">
+                <Label Text="Lectia 2"  FontSize="20"></Label>
+
+            </Frame>
+
+            <Frame BorderColor="Black"
+               Padding="5">
+                <Label Text="Lectia 3"  FontSize="20"></Label>
+            </Frame>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
