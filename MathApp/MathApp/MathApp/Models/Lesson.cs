@@ -14,5 +14,6 @@ namespace MathAppApi.Models
         public string Description { get; set; }
 
         public string Grade { get; set; }
+
     }
 }

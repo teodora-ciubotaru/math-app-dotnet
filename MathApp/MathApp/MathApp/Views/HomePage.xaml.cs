@@ -19,7 +19,8 @@ namespace MathApp.Views
 
         private void Button_OnClicked(object sender, EventArgs e)
         {
-            App.RestServiceInstance.Test();
+            //App.RestServiceInstance.Test();
+         
         }
     }
 }

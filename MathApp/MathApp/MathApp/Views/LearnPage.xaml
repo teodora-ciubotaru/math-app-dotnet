@@ -2,20 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MathApp.Views.LearnPage"
-             BackgroundColor="{StaticResource Dark-green}">
+             BackgroundColor="{StaticResource Dark-blue}">
 
     <ContentPage.Content>
 
-        <StackLayout Margin="25">
+        <!--<StackLayout Margin="25">
 
             <Label Text="Learn Page" HorizontalOptions="Center" FontSize="30"></Label>
 
-            <Frame BorderColor="Gray"
+            <Frame BorderColor="Gray" 
                Padding="10"
-                   CornerRadius="5">
+                   CornerRadius="10">
 
                 <StackLayout Orientation="Vertical"
-                         Spacing="15">
+                         Spacing="10">
 
                     <StackLayout Orientation="Horizontal">
                         <Image Source="learn.png"></Image>
@@ -34,10 +34,10 @@
 
             <Frame BorderColor="Gray"
                Padding="10"
-                   CornerRadius="5">
+                   CornerRadius="10">
 
                 <StackLayout Orientation="Vertical"
-                         Spacing="15">
+                         Spacing="10">
 
                     <StackLayout Orientation="Horizontal">
                         <Image Source="learn.png"></Image>
@@ -56,10 +56,10 @@
 
             <Frame BorderColor="Gray"
                Padding="10"
-                   CornerRadius="5">
+                   CornerRadius="10">
 
                 <StackLayout Orientation="Vertical"
-                         Spacing="15">
+                         Spacing="10">
 
                     <StackLayout Orientation="Horizontal">
                         <Image Source="learn.png"></Image>
@@ -76,6 +76,19 @@
 
             </Frame>
 
-        </StackLayout>
+        </StackLayout>-->
+
+
+        <ListView x:Name="LessonsListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Title}" TextColor="Black"></Label>
+                        <Label Text="{Binding Grade}" TextColor="Black"></Label>
+                        <Label Text="{Binding Description}" TextColor="Black"></Label>
+                    </StackLayout>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>

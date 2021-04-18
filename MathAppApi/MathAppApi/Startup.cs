@@ -31,6 +31,8 @@ namespace MathAppApi.Models
             // register services
             services.AddScoped<UserService>();
 
+            services.AddScoped<LessonService>();
+
             // register controllers
             services.AddControllers();
 
@@ -60,6 +62,8 @@ namespace MathAppApi.Models
             {
                 endpoints.MapControllers();
             });
+
+            //LessonService._context = new MathAppDbContext(new )
         }
     }
 }
